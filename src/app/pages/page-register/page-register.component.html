@@ -9,22 +9,26 @@
               <div class="card mb-3">
 
                 <div class="card-body">
-
+                  <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+                    <div *ngFor="let msg of errorMsg">
+                      <span >{{msg}}</span>
+                    </div>
+                  </div>
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Création de compte</h5>
                     <p class="text-center small">Saisir vos infos de création de compte</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <div class="row g-3">
                     <div class="col-12">
                       <label for="" class="form-label">Nom</label>
-                      <input type="text" name="name" class="form-control" id="" required>
+                      <input type="text" name="name" class="form-control" [(ngModel)]="registrationRequest.lastname" >
                       <div class="invalid-feedback">Renseignez le nom !</div>
                     </div>
 
                     <div class="col-12">
                       <label for="" class="form-label">Prénom</label>
-                      <input type="email" name="email" class="form-control" id="" required>
+                      <input type="text" name="prenom" [(ngModel)]="registrationRequest.firstname" class="form-control"  >
                       <div class="invalid-feedback">Renseignez le prénom !</div>
                     </div>
 
@@ -32,25 +36,25 @@
                       <label for="" class="form-label">Adresse Email</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">$</span>
-                        <input type="text" name="username" class="form-control" id="" required>
+                        <input type="email" name="username" [(ngModel)]="registrationRequest.email" class="form-control"  >
                         <div class="invalid-feedback">Renseignez votre adresse adresse mail !</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="" required>
+                      <input type="password" name="password" [(ngModel)]="registrationRequest.password" class="form-control"  >
                       <div class="invalid-feedback">Renseignez le mot de passe !</div>
                     </div>
 
                   
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                      <button class="btn btn-primary w-100" (click)="register()" >Create Account</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Déjà un compte ? <a [routerLink]="['/login']" >Log in</a></p>
                     </div>
-                  </form>
+                  </div>
 
                 </div>
               </div>

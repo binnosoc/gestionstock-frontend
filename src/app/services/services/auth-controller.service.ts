@@ -14,8 +14,11 @@ import { Authenticate$Params } from '../fn/auth-controller/authenticate';
 import { AuthenticationResponse } from '../models/authentication-response';
 import { confirm } from '../fn/auth-controller/confirm';
 import { Confirm$Params } from '../fn/auth-controller/confirm';
+import { findByEmail } from '../fn/auth-controller/find-by-email';
+import { FindByEmail$Params } from '../fn/auth-controller/find-by-email';
 import { register } from '../fn/auth-controller/register';
 import { Register$Params } from '../fn/auth-controller/register';
+import { UserDto } from '../models/user-dto';
 
 @Injectable({ providedIn: 'root' })
 export class AuthControllerService extends BaseService {
@@ -86,6 +89,39 @@ export class AuthControllerService extends BaseService {
   authenticate(params: Authenticate$Params, context?: HttpContext): Observable<AuthenticationResponse> {
     return this.authenticate$Response(params, context).pipe(
       map((r: StrictHttpResponse<AuthenticationResponse>): AuthenticationResponse => r.body)
+    );
+  }
+
+  /** Path part for operation `findByEmail()` */
+  static readonly FindByEmailPath = '/api/auth/search';
+
+  /**
+   * Trouver l'utilisateur.
+   *
+   * Cette méthode permet de trouver un  utilisateur via son email
+   *
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `findByEmail()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  findByEmail$Response(params: FindByEmail$Params, context?: HttpContext): Observable<StrictHttpResponse<UserDto>> {
+    return findByEmail(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * Trouver l'utilisateur.
+   *
+   * Cette méthode permet de trouver un  utilisateur via son email
+   *
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `findByEmail$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  findByEmail(params: FindByEmail$Params, context?: HttpContext): Observable<UserDto> {
+    return this.findByEmail$Response(params, context).pipe(
+      map((r: StrictHttpResponse<UserDto>): UserDto => r.body)
     );
   }
 

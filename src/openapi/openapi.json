@@ -45,8 +45,8 @@
                     "required": true
                 },
                 "responses": {
-                    "200": {
-                        "description": "L'objet vente créé / modifié",
+                    "400": {
+                        "description": "L'objet vente n'est pas valide",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -55,8 +55,8 @@
                             }
                         }
                     },
-                    "400": {
-                        "description": "L'objet vente n'est pas valide",
+                    "200": {
+                        "description": "L'objet vente créé / modifié",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -339,8 +339,8 @@
                     "required": true
                 },
                 "responses": {
-                    "200": {
-                        "description": "L'objet entreprise créé / modifié",
+                    "400": {
+                        "description": "L'objet entreprise n'est pas valide",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -349,8 +349,8 @@
                             }
                         }
                     },
-                    "400": {
-                        "description": "L'objet entreprise n'est pas valide",
+                    "200": {
+                        "description": "L'objet entreprise créé / modifié",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -423,8 +423,8 @@
                     "required": true
                 },
                 "responses": {
-                    "400": {
-                        "description": "L'objet client n'est pas valide",
+                    "200": {
+                        "description": "L'objet client créé / modifié",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -433,8 +433,8 @@
                             }
                         }
                     },
-                    "200": {
-                        "description": "L'objet client créé / modifié",
+                    "400": {
+                        "description": "L'objet client n'est pas valide",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -838,8 +838,8 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "L'article de la commande a été mis à jour",
+                    "404": {
+                        "description": "Aucune commande fournisseur n'existe dans la base de données avec l'ID fourni",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -848,8 +848,8 @@
                             }
                         }
                     },
-                    "404": {
-                        "description": "Aucune commande fournisseur n'existe dans la base de données avec l'ID fourni",
+                    "200": {
+                        "description": "L'article de la commande a été mis à jour",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1034,8 +1034,8 @@
                     }
                 ],
                 "responses": {
-                    "404": {
-                        "description": "Aucun article n'existe dans la base de données avec l'ID fourni",
+                    "200": {
+                        "description": "Le stock réel de l'article a été calculé",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1044,8 +1044,8 @@
                             }
                         }
                     },
-                    "200": {
-                        "description": "Le stock réel de l'article a été calculé",
+                    "404": {
+                        "description": "Aucun article n'existe dans la base de données avec l'ID fourni",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1553,8 +1553,8 @@
                     }
                 ],
                 "responses": {
-                    "404": {
-                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
+                    "200": {
+                        "description": "La commande client a été trouvé dans la base de données",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1563,8 +1563,8 @@
                             }
                         }
                     },
-                    "200": {
-                        "description": "La commande client a été trouvé dans la base de données",
+                    "404": {
+                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1605,8 +1605,8 @@
                     }
                 ],
                 "responses": {
-                    "404": {
-                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
+                    "200": {
+                        "description": "La commande client a été trouvé dans la base de données",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1615,8 +1615,8 @@
                             }
                         }
                     },
-                    "200": {
-                        "description": "La commande client a été trouvé dans la base de données",
+                    "404": {
+                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1657,8 +1657,8 @@
                     }
                 ],
                 "responses": {
-                    "404": {
-                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
+                    "200": {
+                        "description": "La commande client a été trouvé dans la base de données",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1667,8 +1667,8 @@
                             }
                         }
                     },
-                    "200": {
-                        "description": "La commande client a été trouvé dans la base de données",
+                    "404": {
+                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1700,8 +1700,8 @@
                     }
                 ],
                 "responses": {
-                    "404": {
-                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
+                    "200": {
+                        "description": "La commande client a été trouvé dans la base de données",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1710,8 +1710,8 @@
                             }
                         }
                     },
-                    "200": {
-                        "description": "La commande client a été trouvé dans la base de données",
+                    "404": {
+                        "description": "Aucune  commande client n'existe dans la base de données avec l'ID fourni",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1932,6 +1932,48 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/search": {
+            "get": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "Trouver l'utilisateur",
+                "description": "Cette méthode permet de trouver un  utilisateur via son email",
+                "operationId": "findByEmail",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "utilisateur trouvé",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Utilisateur non trouvé",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto"
                                 }
                             }
                         }
@@ -3081,6 +3123,26 @@
                     },
                     "item": {
                         "$ref": "#/components/schemas/ItemDto"
+                    }
+                }
+            },
+            "UserDto": {
+                "type": "object",
+                "properties": {
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "accountLocked": {
+                        "type": "boolean"
+                    },
+                    "enabled": {
+                        "type": "boolean"
                     }
                 }
             }

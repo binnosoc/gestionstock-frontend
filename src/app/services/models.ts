@@ -30,3 +30,4 @@ export { SupplierOrder } from './models/supplier-order';
 export { SupplierOrderDto } from './models/supplier-order-dto';
 export { SupplierOrderLigne } from './models/supplier-order-ligne';
 export { SupplierOrderLigneDto } from './models/supplier-order-ligne-dto';
+export { UserDto } from './models/user-dto';
